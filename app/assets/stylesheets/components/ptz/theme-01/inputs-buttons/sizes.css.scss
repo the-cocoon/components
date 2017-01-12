@@ -1,0 +1,14 @@
+.ptz_theme-01{
+  $i: 10;
+
+  @while $i <= 25 {
+
+    .ptz_size-#{ $i }{
+      font-size: #{ $i }px;
+      line-height: #{ $i + 3 }px;
+      padding: #{ $i - 7 }px #{ $i - 3 }px;
+    }
+
+    $i: $i + 1;
+  }
+}

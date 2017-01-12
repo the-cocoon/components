@@ -1,0 +1,57 @@
+// http://codepen.io/bbodine1/pen/novBm
+// <div class="checkboxes--style-0">
+//   <input type="checkbox" value="None" id="roundedTwo" name="check" checked />
+//   <label for="roundedTwo"></label>
+// </div>
+
+// .checkboxes--style-0.m5
+//   = check_box :hub, :name, value: 1, checked: true
+//   = label_tag 'hub_name', ''
+
+.checkboxes--style-0
+  width: 28px
+  height: 28px
+  position: relative
+  background: #fcfff4
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%)
+  border-radius: 50px
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5)
+
+  label
+    width: 20px
+    height: 20px
+    position: absolute
+    top: 4px
+    left: 4px
+    cursor: pointer
+    background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%)
+    background: linear-gradient(to bottom, #222222 0%, #45484d 100%)
+    border-radius: 50px
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white
+
+  label:after
+    content: ''
+    width: 11px
+    height: 6px
+    position: absolute
+    top: 6px
+    left: 4px
+    border: 3px solid #fcfff4
+    border-top: none
+    border-right: none
+    background: transparent
+    opacity: 0
+    -webkit-transform: rotate(-45deg)
+    -ms-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+
+  label:hover::after
+    opacity: 0.3
+
+  input[type=checkbox]
+    visibility: hidden
+
+  input[type=checkbox]:checked + label:after
+    opacity: 1
+

@@ -1,0 +1,201 @@
+.custom-select
+  background: white
+  position: relative
+  display: inline-block
+  border: 1px solid #b5c0cd
+  line-height: 100%
+  width: 100%
+
+  &--selected
+    color: black
+    font-size: 13px
+    cursor: pointer
+
+    overflow: hidden
+    position: relative
+    white-space: nowrap
+    padding: 8px 20px 8px 10px
+
+    &:after
+      content: '\25be'
+      display: block
+      text-align: center
+      line-height: 24px
+      color: #666
+
+      position: absolute
+      top:   0
+      right: 0
+
+      width:  22px
+      height: 100%
+
+    &.disabled
+      color: #71727d
+
+  .noscroll
+    overflow: hidden !important
+
+  .no-results
+    display: none
+    cursor: default
+    text-align: center
+    background: #ffd2d2
+
+    &:hover
+      color: black
+      background: #ffd2d2
+
+    &:before, &:after
+      display: none
+
+  &--list-holder
+    white-space: nowrap
+    position: relative
+
+  &--list
+    display: none
+    position: absolute
+    top: 0
+    left: -1px
+
+    padding: 0
+    background: white
+    border: 1px solid #dddfe1
+
+  &--list-title
+    display: none
+    color: black
+    font-size: 13px
+    margin-bottom: 10px
+
+  &--search
+    display: none
+
+  &--select
+    overflow-x: scroll
+    height: 100px
+
+  &--option
+    color: black
+    cursor: pointer
+    white-space: nowrap
+    box-sizing: border-box
+
+    // NOTE: `height` is very important property
+    // for calculation of sizes of boxes
+    // don't remove it
+    height: 33px
+
+    font-size: 13px
+    line-height: 100%
+
+    padding: 10px 10px 10px 9px
+    background: #efefef
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      width: 100%
+      left: 0
+      bottom: 0
+      border-bottom: 1px solid white
+
+    &.true
+      color: white
+      background: #71737D
+
+    &:hover
+      color: white
+      background: #5cb85c
+
+  // WITH SEARCH
+  &--list-title.with-search
+    display: block
+
+  &--list.with-search
+    padding: 10px
+    left: -1px
+    top:  0px
+
+    .custom-select
+      &--search
+        display: block
+        margin-bottom: 5px
+        position: relative
+
+        &:before
+          display: block
+          content: '\1F50D'
+          position: absolute
+          top: 10px
+          left: 7px
+          font-size: 15px
+
+      &--search-input
+        width: 100%
+        background: white
+
+        height: 30px
+        font-size: 15px
+        padding: 0 10px 0 35px
+        border: 1px solid #b5c0cd
+        border-radius: 3px
+
+        transition: border-color .3s
+
+        &:focus
+          border-color: #006dd9
+
+  // WITH CHECKBOXES
+  &--list.checkboxed
+    .custom-select--option
+      position: relative
+      padding-left: 30px
+
+      &:before
+        position: absolute
+        top:    7px
+        left:   5px
+
+        width:  17px
+        height: 17px
+
+        content: '\2713'
+        color: #ccc
+        font-size: 15px
+        text-align: center
+        line-height: 100%
+
+        border-radius: 3px
+        border: 1px solid #ccc
+
+      &:hover:before
+        color: #ccc
+        border-color: #ccc
+
+      &.no-results
+        padding-left: 10px
+
+      &.true
+        &:before
+          color: #fff
+          border-color: #fff
+
+        &:hover:before
+          color: #fff
+          border-color: #fff
+
+  // SOLID
+  &.solid
+    border: none
+
+    .custom-select
+      &--selected
+        display: none
+
+      &--list
+        position: relative
+        display: block
